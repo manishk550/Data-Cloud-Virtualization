@@ -45,7 +45,7 @@ Post Deployment Steps-
  -   TypeAttributes__c - { "typeAttributes": { "label": { "fieldName": "CaseNumber__c" }, "name": "viewDetails", "variant": "base" } }  - For id fields , blank for others 
 
  -   ListViewOrder__c - Order of the field label 
- -   Is_List_View_Field__c - display on list view 
+ -   Is_List_View_Field__c - Display on list view 
  -   
-- [ ] Create the Child Custom Config Object and Define the label and order for Detail View 
+   Note - Create the Child Custom Config Object and Define the label and order for Detail View 
 
