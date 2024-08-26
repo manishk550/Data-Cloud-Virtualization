@@ -4,7 +4,7 @@ Virtualise your data cloud object like case and use case recommendation using Ve
 Pre Requisite - 
 
 - [ ] Create Connected App
-- [ ] Create Named Crdentail 
+- [ ] Create Named Credential 
 - [ ] Setup Auth Provider 
 
 Setup Vector Database for Case Recommendations
