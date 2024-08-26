@@ -3,12 +3,13 @@ Virtualise your data cloud object like case and use case recommendation using Ve
 
 Pre Requisite - 
 
-Create Connected App
-Create Named Crdentail 
-Setup Auth Provider 
-Setup Vector Database for Case Recoomendations
+- [ ] Create Connected App
+- [ ] Create Named Crdentail 
+- [ ] Setup Auth Provider 
+
+Setup Vector Database for Case Recommendations
 
 Install this Package 
-Create the Custom Config Object Records and define your Query 
-Create the Child Custom Config Object and Define the label and order for list view 
-Create the Child Custom Config Object and Define the label and order for Detail View 
+- [ ] Create the Custom Config Object Records and define your Query 
+- [ ] Create the Child Custom Config Object and Define the label and order for list view 
+- [ ] Create the Child Custom Config Object and Define the label and order for Detail View 
