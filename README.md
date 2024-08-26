@@ -1,6 +1,7 @@
 
 # Data-Cloud-Virtualization APP 
 Virtualise your data cloud DMO object data like case and account in Salesforce by using the Reusable LWC app by just changing configuration records.
+
 #Vector Data Base 
 Use the power of semantic search from vector data base to provide cases recommendation to agents so agents can learn from the closed archived cases in data cloud.
 
