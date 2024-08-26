@@ -1,11 +1,12 @@
 
 # Data-Cloud-Virtualization APP 
-Virtualise your data cloud DMO object data like case and account in Salesforce by using the Reusable LWC app by just changing configuration records.
+Leverage the power of Data Cloud by virtualizing your DMO object data (e.g., Case and Account) within Salesforce using a reusable LWC app. Customize the data display simply by adjusting configuration records.
 
-#Vector Data Base 
-Use the power of semantic search from vector data base to provide cases recommendation to agents so agents can learn from the closed archived cases in data cloud.
 
-Pre Requisite - 
+# Vector Database Integration
+Enhance your agents' efficiency by harnessing semantic search capabilities from a vector database. This feature enables the recommendation of relevant cases to agents, allowing them to learn from archived cases within Data Cloud.
+
+ # Pre Requisite - 
 
 - [ ] Create Connected App
 - [ ] Create Named Credential 
@@ -14,20 +15,25 @@ Pre Requisite -
 Setup Vector Database for Case Recommendations
 Setup Vector Database for Case DMO for Case Recommendations
 
-Install this Package 
-- [ ] Create the Custom Config Object Records and define your Query 
-- [ ] Create the Child Custom Config Object and Define the label and order for list view 
+ # Install the Package 
+Installation Instructions
+1. Install the Package This package includes the following components:
+    * dcIntegrationPageController - Apex class for fetching Data Cloud DMO data.
+    * DataCloudVirtualization - LWC for displaying case data.
+    * DataCloudCaseRecommendation - LWC for displaying case recommendations.
+    * DataCloudRecordView - LWC for displaying record details.
+    * dcrecordDetailViewSA - Service component for console navigation to open records in a new tab (required in App Builder).
+    * dcrecordDetailViewAW - Wrapper component for holding the LWC record view component.
 
-Post Deployment Steps-
-- Provide the following  Object access and field access to the user profile
-        - Dc Integration Query Configuration
-        - DC integration Query Fields
-- Provide Object/Tab access
-- Provide access to Data cloud virtulaization app 
-- Go to App Builder and drang the follwoing component to the Case Record page
-    -   DataCloudVirtualization - ex - Query Config Name - Case 
-    -   DatacloudCaseRecommendations 
-    -   dcrecordDetailSA
+
+ # Post-Deployment Steps
+1. Assign Object and Field Access Provide the necessary object and field access to the relevant user profiles:
+    * Objects: Dc Integration Query Configuration, DC Integration Query Fields
+    * Tab Access: Ensure users have access to the Data Cloud Virtualization app.
+2. Configure the Case Record Page Using the App Builder, drag the following components onto the Case Record page:
+    * DataCloudVirtualization (e.g., with Query Config Name: Case)
+    * DataCloudCaseRecommendations
+    * dcrecordDetailSA
 
 
 - [ ] Create the Custom Config Object Records and define your Query
@@ -47,5 +53,5 @@ Post Deployment Steps-
  -   ListViewOrder__c - Order of the field label 
  -   Is_List_View_Field__c - Display on list view 
  -   
-   Note - Create the Child Custom Config Object and Define the label and order for Detail View 
+# Note: The Detail View component will dynamically retrieve field names from the query defined in the Dc Integration Query Configuration object record.
 
