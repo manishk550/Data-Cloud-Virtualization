@@ -52,6 +52,6 @@ Installation Instructions
 
  -   ListViewOrder__c - Order of the field label 
  -   Is_List_View_Field__c - Display on list view 
- -   
-# Note: The Detail View component will dynamically retrieve field names from the query defined in the Dc Integration Query Configuration object record.
+   
+## Note: The Detail View component will dynamically retrieve field names from the query defined in the Dc Integration Query Configuration object record.
 
