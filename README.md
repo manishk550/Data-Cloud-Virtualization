@@ -13,3 +13,4 @@ Install this Package
 - [ ] Create the Custom Config Object Records and define your Query 
 - [ ] Create the Child Custom Config Object and Define the label and order for list view 
 - [ ] Create the Child Custom Config Object and Define the label and order for Detail View 
+
