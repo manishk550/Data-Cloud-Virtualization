@@ -10,6 +10,8 @@
         <targetConfig targets="lightning__HomePage,lightning__RecordPage">
             <property name="ObjectName" type="String" label="Query Config Name" 
                       />
+                      <property name="isSearchEnabled" type="Boolean" label="SearchEnabled" 
+                      />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
