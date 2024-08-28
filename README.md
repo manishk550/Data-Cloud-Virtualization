@@ -1,19 +1,17 @@
 
 # Data-Cloud-Virtualization APP 
-Leverage the power of Data Cloud by virtualizing your DMO object data (e.g., Case and Account) within Salesforce using a reusable LWC app. Customize the data display simply by adjusting configuration records.
+Leverage the power of Data Cloud by virtualizing your DMO object data (e.g., Case and Account) within Salesforce using a reusable LWC Componenet. Customize the display simply by adjusting Query config configuration records.
 
 
 # Vector Database Integration
-Enhance your agents' efficiency by harnessing semantic search capabilities from a vector database. This feature enables the recommendation of relevant cases to agents, allowing them to learn from archived cases within Data Cloud.
+Enhance your agents' efficiency by harnessing  search capabilities from a Data cloud database. This feature enables the serach of relevant cases to agents, allowing them to learn from archived cases within Data Cloud.
 
  # Pre Requisite - 
 
 - [ ] Create Connected App
 - [ ] Create Named Credential 
-- [ ] Setup Auth Provider 
+- [ ] Setup Auth Provider (Reauthorize the app)
 
-Setup Vector Database for Case Recommendations
-Setup Vector Database for Case DMO for Case Recommendations
 
  # Install the Package 
 Installation Instructions
@@ -25,7 +23,6 @@ Installation Instructions
     * dcrecordDetailViewSA - Service component for console navigation to open records in a new tab (required in App Builder).
     * dcrecordDetailViewAW - Wrapper component for holding the LWC record view component.
 
-
  # Post-Deployment Steps
 1. Assign Object and Field Access Provide the necessary object and field access to the relevant user profiles:
     * Objects: Dc Integration Query Configuration, DC Integration Query Fields
@@ -36,7 +33,7 @@ Installation Instructions
     * dcrecordDetailSA
 
 
-- [ ] Create the Custom Config Object Records and define your Query
+- [ ] Create the Custom Config Object Records and define your Query Custom Config Object name should be same a builder config Names)
 
     -  Name - Case(Query Config Name )
     -  Query -  select AccountId__c,CaseNumber__c,Id__c, ContactId__c,Comments__c,ContactEmail__c,ContactMobile__c,ContactPhone__c,ContactId__c,Priority__c, Status__c, Subject__c from Case_00Da5000002yYP8__dll limit 10
