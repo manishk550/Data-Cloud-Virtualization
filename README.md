@@ -1,6 +1,6 @@
 
 # Data-Cloud-Virtualization APP 
-Leverage the power of Data Cloud by virtualizing your DMO object data (e.g., Case and Account) within Salesforce using a reusable LWC app. Customize the data display simply by adjusting configuration records.
+Leverage the power of Data Cloud by virtualizing your DMO object data (e.g., Case and Account etc) within Salesforce using a reusable LWC component. Customize the Layout like Fild Name and order and  display the Data simply by adjusting configuration records.
 
 
 # Vector Database Integration
@@ -10,7 +10,7 @@ Enhance your agents' efficiency by harnessing  search capabilities from a vector
 
 - [ ] Create Connected App
 - [ ] Create Named Credential 
-- [ ] Setup Auth Provider 
+- [ ] Setup Auth Provider (Reauthorize)
 
 Setup Vector Database for Case Recommendations
 Setup Vector Database for Case DMO for Case Recommendations
@@ -34,14 +34,14 @@ Installation Instructions
     * DataCloudVirtualization (e.g., with Query Config Name: Case)
     * DataCloudCaseRecommendations
     * dcrecordDetailSA
+3. Open App Builder and drag the component to the record page and give Query Config Name (ex - case)    
 
+- [ ] Create the Custom Config Object Records and define your Query, Provide the Name same as Query Config Name in App Builder COnfiguration.
 
-- [ ] Create the Custom Config Object Records and define your Query
-
-    -  Name - Case(Query Config Name )
+    -  Name - Case(Query Config Name)
     -  Query -  select AccountId__c,CaseNumber__c,Id__c, ContactId__c,Comments__c,ContactEmail__c,ContactMobile__c,ContactPhone__c,ContactId__c,Priority__c, Status__c, Subject__c from Case_00Da5000002yYP8__dll limit 10
     -  Parent_Object__c - Account 
-    -  Relationship - Child 
+    -  Relationship - Child or parent 
 
 
 - [ ] Create the Child Custom Config Object and Define the label and order for list view
