@@ -20,9 +20,9 @@
     <!-- Main Section -->
     <template if:false={showDetailView}>
             <template if:false={loading}>
-            <lightning-card title='Case Recommendations' icon-name="utility:einstein">
+            <lightning-card title='Similar Cases' icon-name="utility:einstein">
                     <template if:true={simpleListViewRecs.length}>
-                        <lightning-input type="search" label="Search Cases" placeholder="Enter Subject" onchange={handleSearch} class="slds-m-bottom_medium"></lightning-input>
+                        <lightning-input type="search" label="Search Cases" placeholder="Enter Subject" onchange={handleSearch} class="slds-m-bottom_medium custom-input"></lightning-input>
                         <lightning-datatable
                             key-field="id"
                             data={simpleListViewRecs}
@@ -43,7 +43,7 @@
 
     <template if:true={viewAll}>
         <template if:false={loading}>
-        <lightning-card title='Case Recommendations' icon-name="utility:einstein">
+        <lightning-card title='Similar Cases' icon-name="utility:einstein">
                 <template if:true={extendedListViewRecords.length}>
                     <lightning-datatable
                         key-field="id"
