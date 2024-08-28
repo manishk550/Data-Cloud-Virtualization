@@ -1,6 +1,7 @@
 
 # Data-Cloud-Virtualization APP 
 Leverage the power of Data Cloud by virtualizing your DMO object data (e.g., Case and Account etc) within Salesforce using a reusable LWC component. Customize the Layout like Fild Name and order and  display the Data simply by adjusting configuration records.
+User can also use serach feature to search the data cloud case records by entering case number or subject as We have build live integration between data cloud and service cloud using query API.
 
 
 # Vector Database Integration
