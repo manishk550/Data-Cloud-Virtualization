@@ -210,15 +210,26 @@ public with sharing class DCIntegrationPageController {
                 break;
             }
         }
-        string query = ''; 
-        
-        if(dcConfig != null){
-            query = dcConfig.Query__c.replace(':userInput', '\'' + userInput + '\'');
-            system.debug('query'+query);
+        String modifiedQuery= '';
+        if(dcConfig!=null)
+        {   
+        if (isAlpha(userInput)) 
+        {
+            // Replace the placeholder with string filter for LIKE clause
+            String subjectFilter =  'WHERE Subject__c LIKE \''  + '%' +userInput +'%'+'\''+' LIMIT 10';
+            // Construct the modified query
+            modifiedQuery = dcConfig.Query__c+' '+subjectFilter;
+            
+        } else 
+        {
+          // Replace the placeholder with actual numeric value
+            String caseNumberFilter = 'WHERE CaseNumber__c = \'' + userInput + '\'';
+            // Construct the modified query
+            modifiedQuery = dcConfig.Query__c+' '+caseNumberFilter;
         }
-
+        }
         // Execute the provided query
-        String responseBody = executeQuery(query);
+        String responseBody = executeQuery(modifiedQuery);
 
         // Parse response body
         if (responseBody != null && !String.isEmpty(responseBody)) {
@@ -315,6 +326,11 @@ public with sharing class DCIntegrationPageController {
                    insert (new Error_Logs__c(Name=e.getTypeName(),Exception_From__c=String.valueof(e.getLineNumber())+e.getCause(),Exception_Message__c=e.getMessage(),Exception_Type__c=e.getTypeName(),Input_Request__c=e.getStackTraceString()));
                 }
         return responseData;
+    }
+    public static Boolean isAlpha(String userInput) {
+        Pattern alphaPattern = Pattern.compile('^[a-zA-Z ]*$');
+        Matcher matcher = alphaPattern.matcher(userInput);
+        return matcher.matches();
     }
     
 }
