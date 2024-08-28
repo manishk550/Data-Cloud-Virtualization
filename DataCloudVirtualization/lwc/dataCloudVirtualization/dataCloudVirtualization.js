@@ -6,8 +6,9 @@ import { EnclosingTabId, openSubtab, IsConsoleNavigation } from 'lightning/platf
 import MESSAGE_CHANNEL from '@salesforce/messageChannel/dcObjectMessageChannel__c';
 import { publish, MessageContext } from 'lightning/messageService';
 
-export default class DcListViewSearchPOC extends LightningElement {
+export default class TestSearch extends LightningElement {
     @api ObjectName;
+    @api isSearchEnabled;
     objectName;
     recordId = '';
     @track totalRecs = [];
@@ -79,7 +80,7 @@ export default class DcListViewSearchPOC extends LightningElement {
     }
 
     updateDisplayedRecords() {
-        if (this.searchTerm.length>7) {
+        if (this.searchTerm.length>3) {
             this.loadData();
         } else {
             this.totalRecsNumToDisplay = this.totalRecs.length;
@@ -103,7 +104,22 @@ export default class DcListViewSearchPOC extends LightningElement {
         getDatabyUserInput({ queryConfigName: 'searchCase', userInput: this.searchTerm })
             .then(data => {
                 if (data) {
-                    this.simpleListViewRecs = data;
+                    if(data.length>5)
+                    {
+                        this.totalRecs=data;
+                        this.totalRecsNumToDisplay = this.totalRecs.length;
+                        let n = this.totalRecs.length > 5 ? 5 : this.totalRecs.length;
+                        this.simpleListViewRecs = this.totalRecs.slice(0, n);
+                        let m = this.totalRecs.length > 10 ? 10 : this.totalRecs.length;
+                        this.extendedListViewRecords = this.totalRecs.slice(0, m);
+                        this.totalPages = Math.ceil(this.totalRecs.length / this.recordSize);
+                        this.loading = false;
+                    }
+                    else
+                    {
+                        this.simpleListViewRecs=data
+                    }
+                    
                     
                 }
             })
