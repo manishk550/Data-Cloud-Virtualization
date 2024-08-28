@@ -22,7 +22,9 @@
             <template if:false={loading}>
             <lightning-card title={ObjectName} icon-name="standard:case">
                     <template if:true={simpleListViewRecs.length}>
-                        <lightning-input type="search" label="Search Cases" placeholder="Enter Case Number" onchange={handleSearch} class="slds-m-bottom_medium"></lightning-input>
+                        <template if:true={isSearchEnabled}>
+                        <lightning-input type="search" label="Search Cases" placeholder="Enter Case Number or Subject" onchange={handleSearch} class="slds-m-bottom_medium custom-input"></lightning-input>
+                        </template>
                         <lightning-datatable
                             key-field="Id__c"
                             data={simpleListViewRecs}
