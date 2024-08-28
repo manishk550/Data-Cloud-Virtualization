@@ -4,7 +4,7 @@ Leverage the power of Data Cloud by virtualizing your DMO object data (e.g., Cas
 
 
 # Vector Database Integration
-Enhance your agents' efficiency by harnessing semantic search capabilities from a vector database. This feature enables the recommendation of relevant cases to agents, allowing them to learn from archived cases within Data Cloud.
+Enhance your agents' efficiency by harnessing  search capabilities from a vector database. This feature enables the recommendation of relevant cases to agents, allowing them to learn from archived cases within Data Cloud.
 
  # Pre Requisite - 
 
