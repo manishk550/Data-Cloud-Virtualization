@@ -1,7 +1,14 @@
 
 # Data-Cloud-Virtualization APP 
-Leverage the power of Data Cloud by virtualizing your DMO object data (e.g., Case and Account etc) within Salesforce using a reusable LWC component. Customize the Layout like Fild Name and order and  display the Data simply by adjusting configuration records.
-User can also use serach feature to search the data cloud case records by entering case number or subject as We have build live integration between data cloud and service cloud using query API.
+
+Leverage the power of Data Cloud by virtualizing your DMO object data (e.g., Case and Account etc) within Salesforce using a configurable generic LWC component.  You can bring your Data Cloud data and view in Salesforce Platform similar to standard object list and record views with no code simple configuration steps.
+The LWC component uses the configuration from a custom object "DC Integration Query" and utilizes DC Query API to fetch the data from Data Cloud.  Manage your personalization from the configuration object including
+Pick any object available in Data Cloud (supported in Query API)
+Pick your list of fields to query from Data Cloud object
+Label the fields differently in the UI
+Order of display of the fields
+LWC Component also has a optional Search feature to search the Data Cloud on-demand and get results immediately.  For instance, you might want to showcase the archived case records from Data Cloud but also wants agents to search a specific case number from the past when customer refers them.
+
 
 # Home Screen
 ![Screenshot 2024-08-28 at 11 08 00](https://github.com/user-attachments/assets/40ce22df-8420-4b13-a748-2b89335956c2)
@@ -29,7 +36,8 @@ Enhance your agents' efficiency by harnessing  search capabilities from a vector
 Setup Vector Database for Case Recommendations
 Setup Vector Database for Case DMO for Case Recommendations
 
- # Install the Package 
+ # Install the Package - 
+ - Follow the steps in this document to setup the Data Cloud Virtualization generic component and configure as per your needs. Have fun with truly bringing Customer 360 in the platform!
 Installation Instructions
 1. Install the Package This package includes the following components:
     * dcIntegrationPageController - Apex class for fetching Data Cloud DMO data.
