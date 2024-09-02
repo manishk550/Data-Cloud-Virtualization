@@ -3,9 +3,16 @@
 Leverage the power of Data Cloud by virtualizing your DMO object data (e.g., Case and Account etc) within Salesforce using a reusable LWC component. Customize the Layout like Fild Name and order and  display the Data simply by adjusting configuration records.
 User can also use serach feature to search the data cloud case records by entering case number or subject as We have build live integration between data cloud and service cloud using query API.
 
+# Home Screen
 ![Screenshot 2024-08-28 at 11 08 00](https://github.com/user-attachments/assets/40ce22df-8420-4b13-a748-2b89335956c2)
+
+# List View 
 ![Screenshot 2024-08-28 at 11 08 12](https://github.com/user-attachments/assets/4880032b-8f51-442c-a0b4-ab8097198693)
+
+# Detail View
 ![Screenshot 2024-08-28 at 11 08 24](https://github.com/user-attachments/assets/83e969fb-9da9-4651-bd3a-3419c2958b93)
+
+# Config UI
 ![Screenshot 2024-08-28 at 11 11 35](https://github.com/user-attachments/assets/04a7f94b-8d71-4987-8ab6-1908d1ac05c9)
 
 
