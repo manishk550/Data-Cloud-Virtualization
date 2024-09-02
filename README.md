@@ -2,11 +2,13 @@
 # Data-Cloud-Virtualization APP 
 
 Leverage the power of Data Cloud by virtualizing your DMO object data (e.g., Case and Account etc) within Salesforce using a configurable generic LWC component.  You can bring your Data Cloud data and view in Salesforce Platform similar to standard object list and record views with no code simple configuration steps.
-The LWC component uses the configuration from a custom object "DC Integration Query" and utilizes DC Query API to fetch the data from Data Cloud.  Manage your personalization from the configuration object including
-Pick any object available in Data Cloud (supported in Query API)
-Pick your list of fields to query from Data Cloud object
-Label the fields differently in the UI
-Order of display of the fields
+The LWC component uses the configuration from a custom object "DC Integration Query" and utilizes DC Query API to fetch the data from Data Cloud.  Manage your personalization from the configuration object including - 
+
+- Pick any object available in Data Cloud (supported in Query API)
+- Pick your list of fields to query from Data Cloud object
+- Label the fields differently in the UI
+- Order of display of the fields
+  
 LWC Component also has a optional Search feature to search the Data Cloud on-demand and get results immediately.  For instance, you might want to showcase the archived case records from Data Cloud but also wants agents to search a specific case number from the past when customer refers them.
 
 
