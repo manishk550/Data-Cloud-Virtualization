@@ -25,6 +25,10 @@ LWC Component also has a optional Search feature to search the Data Cloud on-dem
 # Config UI
 ![Screenshot 2024-08-28 at 11 11 35](https://github.com/user-attachments/assets/04a7f94b-8d71-4987-8ab6-1908d1ac05c9)
 
+# DC Integration Query Conifg Records 
+![Screenshot 2024-09-02 at 11 23 03](https://github.com/user-attachments/assets/eec2185d-8668-4d46-bcce-594586d1c992)
+![Screenshot 2024-09-02 at 11 23 19](https://github.com/user-attachments/assets/c7473b1a-fc7b-4741-9e42-b50b2849e0f1)
+![Screenshot 2024-09-02 at 11 23 42](https://github.com/user-attachments/assets/e50c85b0-4df3-41f7-b9d6-ce144fed4ad0)
 
 
 # Vector Database Integration
