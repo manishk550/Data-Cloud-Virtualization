@@ -42,7 +42,8 @@ Setup Vector Database for Case DMO for Case Recommendations
  # Install the Package - 
  - Follow the steps in this document to setup the Data Cloud Virtualization generic component and configure as per your needs. Have fun with truly bringing Customer 360 in the platform!
 Installation Instructions
-1. Install the Package This package includes the following components:
+
+- Install the Package This package includes the following components:
     * dcIntegrationPageController - Apex class for fetching Data Cloud DMO data.
     * DataCloudVirtualization - LWC for displaying case data.
     * DataCloudCaseRecommendation - LWC for displaying case recommendations.
