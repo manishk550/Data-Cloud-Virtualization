@@ -1,0 +1,14 @@
+<aura:component implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes" >
+    <lightning:workspaceAPI aura:id="workspace" />
+    <lightning:navigationItemAPI aura:id="navigationItem" />
+    <lightning:utilityBarAPI aura:id="utilityBar" />
+    <aura:attribute name="recordDetails" type="Object" />
+    <aura:attribute name="objectName" type="String" />
+    <lightning:messageChannel
+        aura:id="mchannel"
+        type="dcObjectMessageChannel__c"
+        scope="APPLICATION"
+        onMessage="{!c.handleMessage}"
+    />
+    
+</aura:component>
