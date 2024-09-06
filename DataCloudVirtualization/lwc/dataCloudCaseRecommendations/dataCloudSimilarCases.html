@@ -26,7 +26,7 @@
                         <lightning-datatable
                             key-field="id"
                             data={simpleListViewRecs}
-                            columns={columns}
+                            columns={simpleListViewColumns}
                             hide-checkbox-column="true"
                             show-row-number-column="true"
                             onrowaction={detailViewHandler}>
@@ -48,7 +48,7 @@
                     <lightning-datatable
                         key-field="id"
                         data={extendedListViewRecords}
-                        columns={columns}
+                        columns={extendedListViewColumns}
                         hide-checkbox-column="true"
                         show-row-number-column="true"
                         onrowaction={detailViewHandler}>
