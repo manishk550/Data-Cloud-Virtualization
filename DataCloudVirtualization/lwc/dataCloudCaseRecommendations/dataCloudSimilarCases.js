@@ -1,6 +1,7 @@
 import { LightningElement, api, track, wire } from 'lwc';
 import getSimilarCases from '@salesforce/apex/DCIntegrationPageController.getCaseData';
 import { getRecord } from 'lightning/uiRecordApi';
+import getListViewFields from '@salesforce/apex/DCIntegrationPageController.getListViewFields';
 import { EnclosingTabId, openSubtab, IsConsoleNavigation } from 'lightning/platformWorkspaceApi';
 import MESSAGE_CHANNEL from '@salesforce/messageChannel/dcObjectMessageChannel__c';
 import { publish, MessageContext } from 'lightning/messageService';
@@ -10,7 +11,7 @@ const FIELDS = [
     'Case.Subject',
 ];
 
-export default class DcListvIewSerachbySubject extends LightningElement {
+export default class dataCloudCaseRecommendations extends LightningElement {
     @wire(MessageContext)
     messageContext;
     
@@ -19,7 +20,8 @@ export default class DcListvIewSerachbySubject extends LightningElement {
 
     @wire(EnclosingTabId)
     enclosingTabId;
-
+    @api ObjectName;
+    @api isSearchEnabled;
     @api recordId;
     @api caseSubject;
     @track totalRecs = [];
@@ -37,19 +39,21 @@ export default class DcListvIewSerachbySubject extends LightningElement {
     totalRecsNumToDisplay;
     @api showDetailView = false;
     @api viewAll = false;
+    @track extendedListViewColumns=[];
+    @track  simpleListViewColumns=[];
+    queryConfigName='Semantic Search Query';
 
-    @track columns = [
-        { label: 'Query Type', fieldName: 'CRM_Query_Type__c', type: 'button', 
-            typeAttributes: { 
-                label: { fieldName: 'CRM_Query_Type__c' },
-                name: 'viewDetails',
-                variant: 'base'
-            }
-        },
-        { label: 'Class', fieldName: 'Class__c', type: 'text' },
-        { label: 'Description', fieldName: 'Description__c', type: 'text' },
-        { label: 'Subject', fieldName: 'Subject__c', type: 'text' }
-    ];
+    @wire(getListViewFields, { queryConfigName: '$queryConfigName' })
+    wiredListViewFields({ error, data }) {
+        if (data) {
+            this.extendedListViewColumns = this.processListViewColumns(data);
+            this.simpleListViewColumns = this.extendedListViewColumns.length > 4 ? this.extendedListViewColumns.slice(0,6):this.extendedListViewColumns;
+        } else if (error) {
+            console.error('Error loading list view columns', error);
+            this.error = 'Error loading list view columns. Please try again later.';
+            this.loading = false;
+        }
+    }
 
     @wire(getRecord, { recordId: '$recordId', fields: FIELDS })
     handleRecord({ error, data }) {
@@ -64,7 +68,7 @@ export default class DcListvIewSerachbySubject extends LightningElement {
         }
     }
 
-    @wire(getSimilarCases, { subject: '$caseSubject' })
+    @wire(getSimilarCases, { queryConfigName:'$queryConfigName',subject: '$caseSubject' })
     wiredCases({ error, data }) {
         if (data) {
             this.totalRecs = data;
@@ -126,7 +130,7 @@ export default class DcListvIewSerachbySubject extends LightningElement {
 
     viewAllHandler() {
         let componentDef = {
-            componentDef: "c:DcListvIewSerachbySubject",
+            componentDef: "c:dataCloudCaseRecommendations",
             attributes: {
                 showDetailView: true,
                 viewAll: true,
@@ -159,7 +163,7 @@ export default class DcListvIewSerachbySubject extends LightningElement {
     handleDetailView(recordDetails) {
         const message = {
             recordDetails: JSON.stringify(recordDetails),
-            objectName: 'cases1'
+            objectName: 'Similar Cases Detail View'
         };
         publish(this.messageContext, MESSAGE_CHANNEL, message);
     }
